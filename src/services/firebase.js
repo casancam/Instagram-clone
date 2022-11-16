@@ -90,7 +90,6 @@ export async function updateFollowedUserFollowers(
 }
 
 export async function getPhotos(userId, following) {
-  // [5,4,2] => following
   const result = await firebase
     .firestore()
     .collection("photos")
