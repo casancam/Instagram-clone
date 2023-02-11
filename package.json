@@ -1,5 +1,5 @@
 {
-  "name": "instagram",
+  "name": "softwaregram",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,16 +24,40 @@
   "scripts": {
     "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css --watch",
-    "react-scripts:start": "ping -n 6 127.0.0.1>nul && react-scripts start",
-    "start": "run-p watch:css react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "react-scripts:start": "sleep 5 && react-scripts start",
+    "react-scripts:dist": "react-scripts build",
+    "start": "run-p watch:css react-scripts:start",
+    "build": "run-s build:css react-scripts:dist",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!<rootDir>/src/App.js",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/seed.js",
+      "!<rootDir>/src/fixtures/*.js",
+      "!<rootDir>/src/hooks/*.js",
+      "!<rootDir>/src/helpers/*.js",
+      "!<rootDir>/src/services/firebase.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
     ]
   },
   "browserslist": {

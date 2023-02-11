@@ -52,7 +52,7 @@ export default function SignUp() {
   };
 
   useEffect(() => {
-    document.title = "Sign Up - Instagram";
+    document.title = "Sign Up - Softwaregram";
   }, []);
 
   return (
@@ -73,9 +73,13 @@ export default function SignUp() {
             />
           </h1>
 
-          {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
+          {error && (
+            <p data-testid="error" className="mb-4 text-xs text-red-primary">
+              {error}
+            </p>
+          )}
 
-          <form onSubmit={handleSignUp} method="POST">
+          <form onSubmit={handleSignUp} method="POST" data-testid="sign-up">
             <input
               aria-label="Enter your full name"
               type="text"
@@ -125,7 +129,11 @@ export default function SignUp() {
         <div className="flex justify-center items-center flex-col w-full bg-white rounded p-4 border border-gray-primary">
           <p className="text-sm">
             Have an account?{` `}
-            <Link to={ROUTES.LOGIN} className="font-bold text-blue-medium">
+            <Link
+              to={ROUTES.LOGIN}
+              className="font-bold text-blue-medium"
+              data-testid="login"
+            >
               Login
             </Link>
           </p>
