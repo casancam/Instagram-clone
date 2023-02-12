@@ -18,10 +18,10 @@ export default function Header() {
         <div className="flex justify-between h-full">
           <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
             <h1 className="flex justify-center w-full">
-              <Link to={ROUTES.DASHBOARD} aria-label="Instagram logo">
+              <Link to={ROUTES.DASHBOARD} aria-label="Softwaregram logo">
                 <img
                   src="/images/logo.png"
-                  alt="Instagram"
+                  alt="Softwaregram"
                   className="mt-2 w-6/12"
                 />
               </Link>

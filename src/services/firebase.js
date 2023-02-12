@@ -58,7 +58,7 @@ export async function getSuggestedProfiles(userId, following) {
 }
 
 export async function updateLoggedInUserFollowing(
-  loggedInUserDocId, // currently logged in user document id
+  loggedInUserDocId, // currently logged-in user document id
   profileId, // the user that you requests to follow
   isFollowingProfile // true/false (am i currently following this person?)
 ) {
@@ -139,7 +139,7 @@ export async function isUserFollowingProfile(
   const result = await firebase
     .firestore()
     .collection("users")
-    .where("username", "==", loggedInUserUsername) // karl (active logged in user)
+    .where("username", "==", loggedInUserUsername) // carlos_sc00 (active logged in user)
     .where("following", "array-contains", profileUserId)
     .get();
 

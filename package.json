@@ -8,7 +8,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@welldone-software/why-did-you-render": "^7.0.1",
     "date-fns": "^2.29.3",
     "firebase": "^9.13.0",
     "prettier": "^2.7.1",
@@ -24,7 +23,7 @@
   "scripts": {
     "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css --watch",
-    "react-scripts:start": "sleep 5 && react-scripts start",
+    "react-scripts:start": "react-scripts start",
     "react-scripts:dist": "react-scripts build",
     "start": "run-p watch:css react-scripts:start",
     "build": "run-s build:css react-scripts:dist",
